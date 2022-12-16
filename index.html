@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Display Image</title>
+  </head>
+  <body>
+    <div id="image-container"></div>
+    <script>
+    
+      const apiUrl = 'your_api_request_here';
+      
+      async function fetchImage() {
+    
+      const response = await fetch(apiUrl);
+      const data = await response.json();   
+   
+      const imageElement = document.createElement('img');
+      imageElement.src = `data:image/webp;base64,${data}`;
+     
+      document.querySelector('#image-container').appendChild(imageElement);
+      
+      }
+
+      fetchImage();
+      
+    </script>
+  </body>
+</html>
